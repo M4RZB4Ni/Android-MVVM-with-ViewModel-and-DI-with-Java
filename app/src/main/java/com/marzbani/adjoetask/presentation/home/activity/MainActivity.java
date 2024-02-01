@@ -119,9 +119,8 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage("Please grant the notification permission in settings.")
                 .setPositiveButton("Open Settings", (dialog, which) -> {
                     // Open app settings
-                    Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
 //                    intent.setData(Uri.parse(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS));
-                    startActivity(intent);
+                    startActivity(new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS));
                 })
                 .setNegativeButton("Cancel", null)
                 .show();
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
 
                 // Optionally, you can prompt the user to open settings and grant the permission manually
-                showOpenSettingsDialog();
+//                showOpenSettingsDialog();
             }
         }
     }
