@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission granted, you can proceed with your method
                 registerReceiver(
-                        new UserPresentReceiver(),new IntentFilter("android.intent.action.USER_PRESENT") );
+                        new UserPresentReceiver(),new IntentFilter(Constants.USER_PRESENT) );
             } else {
                 // Permission denied, show a message or take appropriate action
                 Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
